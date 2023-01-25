@@ -20,7 +20,7 @@ function preload() {
   blockImg = loadImage("img/block.png");
   floorImg = loadImage("img/floor.png");
   flowerImg = loadImage("img/flower.png");
-  marioImg = loadAnimation("img/mario.gif");
+  marioImg = loadAnimation("img/mario1.png", "img/mario2.png");
   theEndImg = loadAnimation("img/theEnd.jpeg");
 }
 
@@ -30,7 +30,7 @@ function setup() {
   // posição, tamanhos do mario por Bianca Cristina
   mario = createSprite(100, 140, 20, 20);
   mario.addAnimation("mario", marioImg);
-  mario.scale = 0.3;
+  mario.scale = 0.5;
   mario.x = 50;
 
   // posição, tamanhos do chão por Bianca Cristina
