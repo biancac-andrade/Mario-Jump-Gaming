@@ -10,11 +10,11 @@ var theEnd, theEndImg;
 var state = "go";
 
 // declaração de variaveis dos grupos por Bianca Cristina
-var grupoBarreiras, grupoClouds;
+var grupoBarreiras, grupoClouds, grupoFlower;
 
 function preload() {
   //chamada das imagens por Diego Araújo
-  pipeImg = loadImage("img/warp-pipe.png");
+  pipeImg = loadImage("img/pipe.png");
   cloudImg = loadImage("img/cloud.png");
   cloudImg2 = loadImage("img/cloud2.png");
   blockImg = loadImage("img/block.png");
@@ -43,6 +43,7 @@ function setup() {
   // chamada de grupos por Bianca Cristina
   grupoBarreiras = new Group();
   grupoClouds = new Group();
+  grupoFlower = new Group();
 
   // chamada de imagem de fim de jogo por Bianca Cristina
   theEnd = createSprite(690, 240, 20, 20);
@@ -70,9 +71,10 @@ function draw() {
     mario.velocityY = mario.velocityY + 0.8;
     mario.collide(floorInvisible);
 
-    // adicionando as barreiras e nuvens por Bianca Cristina
+    // adicionando as barreiras, flor e nuvens por Bianca Cristina
     criaBarreira();
     criaCloud();
+    criaFlower(); 
 
     if (grupoBarreiras.isTouching(mario)) {
       state = "end";
@@ -83,6 +85,7 @@ function draw() {
 
     grupoBarreiras.setVelocityXEach(0);
     grupoClouds.setVelocityXEach(0);
+    grupoFlower.setVelocityXEach(0);
 
     theEnd.visible = true;
 
@@ -95,6 +98,7 @@ function draw() {
       state = "go";
       grupoBarreiras.destroyEach();
       grupoClouds.destroyEach();
+      grupoFlower.destroyEach();
 
       // nao ebibe a imagem de fim do jogo
       theEnd.visible = false;
@@ -106,20 +110,17 @@ function draw() {
 
 // função das barreias com posicao, velocidade, loop e tamanho e nomea o grupo de barreira  por Bianca Cristina
 function criaBarreira() {
-  if (frameCount % 70 === 0) {
+  if (frameCount % 125  === 0) {
     var barreira = createSprite(700, 548, 40, 10);
-    barreira.velocityX = -2;
+    barreira.velocityX = -2   ;
 
-    var num = Math.round(random(1, 2, 3));
+    var num = Math.round(random(1,2 ));
 
     switch (num) {
       case 1:
         barreira.addImage(blockImg);
         break;
       case 2:
-        barreira.addImage(flowerImg);
-        break;
-      case 3:
         barreira.addImage(pipeImg);
         break;
       default:
@@ -135,7 +136,7 @@ function criaBarreira() {
 
 // função das nuvens com posicao, velocidade, loop e tamanho e nomea o grupo de nuvens por Bianca Cristina
 function criaCloud() {
-  if (frameCount % 90 === 0) {
+  if (frameCount % 120  === 0) {
     var cloud = createSprite(700, 300, 40, 10);
     cloud.velocityX = -2;
 
@@ -157,5 +158,20 @@ function criaCloud() {
     cloud.lifetime = 500;
 
     grupoClouds.add(cloud);
+  }
+}
+
+
+function criaFlower() {
+  if (frameCount  % 200 === 0) {
+    var flower = createSprite(700, 548, 40, 10);
+    flower.velocityX = -2  ;
+
+        flower.addImage(flowerImg);
+
+    flower.scale = 0.1;
+
+    flower.lifetime = 500;
+    grupoFlower.add(flower);
   }
 }
