@@ -9,12 +9,12 @@
 
 - Bianca Cristina
 - Diego Araújo
-- Edileide
+- ~~Edileide~~
 - ~~Larissa~~
 
 ## A divisão da tarefa foi combinado pela equipe da seguinte forma:
 
-#### A divisão em quatro parte por motivo por ter 4 integrantes da equipe, porém um acabou desistindo e saindo do grupo.
+#### A divisão em quatro parte por motivo por ter 4 integrantes da equipe, porém dois acabou desistindo e saindo do grupo.
 
 1. Diego -> Procurar, salvar,Colocar imagens pasta organizada, nomes variáveis, nomear imagens, preparar imagens para códigos e preparar primeiros códigos inicio para jogos
 
@@ -22,7 +22,9 @@
 
 3. Bianca -> Criar funções para fazer jogo funcionar por exemplo pular, andar, voar com as teclas
 
-4. Edileide -> Criar funções com condicionais de acordo com jogo pra funcionar para entrega
+4. Bianca -> Criar funções com condicionais de acordo com jogo pra funcionar para entrega
 
 
 ###### Responsavel do grupo e pela entrega para professora e github pages: Bianca
+
+#### Link da [Github Page ](https://biancac-andrade.github.io/Mario-Jump-Gaming/)
